@@ -7,5 +7,5 @@ fun main(){
     val hourOfArrival = arrivalInMinutes / 60
     val minuteOfArrival = arrivalInMinutes % 60
     val arrivalTime = String.format("$hourOfArrival:%02d",minuteOfArrival)
-    println("Arrival time: $arrivalTime")
+    println("Arrival time is $arrivalTime")
 }
