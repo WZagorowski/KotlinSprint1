@@ -9,6 +9,8 @@ fun main(){
     val firstSize = 80
     val secondWeight = 42
     val secondSize = 120
-    println("Average для груза с весом $firstWeight кг и объемом $firstSize л: ${firstWeight >= minWeight && firstWeight <= maxWeight && firstSize < maxSize}")
-    println("Average для груза с весом $secondWeight кг и объемом $secondSize л: ${secondWeight >= minWeight && secondWeight <= maxWeight && secondSize < maxSize}")
+    val isFirstAverage = firstWeight >= minWeight && firstWeight <= maxWeight && firstSize < maxSize
+    val isSecondAverage = secondWeight >= minWeight && secondWeight <= maxWeight && secondSize < maxSize
+    println("Average для груза с весом $firstWeight кг и объемом $firstSize л: $isFirstAverage")
+    println("Average для груза с весом $secondWeight кг и объемом $secondSize л: $isSecondAverage")
 }
