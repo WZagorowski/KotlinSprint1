@@ -5,11 +5,12 @@ fun main(){
 
     if (trainingDay == null) println("Введите число: 1, 2, 3 ...")
     else {
+        val isItEvenNumber = trainingDay % 2 == 0
         println("""
-            |Упражнения для рук:    ${trainingDay % 2 == 1}
-            |Упражнения для ног:    ${trainingDay % 2 == 0}
-            |Упражнения для спины:  ${trainingDay % 2 == 0}
-            |Упражнения для пресса: ${trainingDay % 2 == 1}
+            |Упражнения для рук:    ${!isItEvenNumber}
+            |Упражнения для ног:    $isItEvenNumber
+            |Упражнения для спины:  $isItEvenNumber
+            |Упражнения для пресса: ${!isItEvenNumber}
             """.trimMargin())
     }
 }
