@@ -1,10 +1,12 @@
 package lesson_4
 
 fun main(){
-    val weather = "солнечная погода"
-    val tent = "тент раскрыт"
-    val humidity = "влажность 20"
-    val timeOfYear = "время года зима"
-    val result = weather == "солнечная погода" && tent == "тент раскрыт" && humidity == "влажность 20" && timeOfYear != "время года зима"
+    val isWeatherSunny = "Sunny"
+    val isTentOpen = "Open"
+    val isHumidityCorrect = 20
+    val isItNotWinter = "Winter"
+
+    val result = isWeatherSunny == "Sunny" && isTentOpen == "Open"
+            && isHumidityCorrect == 20 && isItNotWinter != "Winter"
     println("Благоприятные ли условия сейчас для роста бобовых? $result")
 }
