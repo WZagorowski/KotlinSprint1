@@ -5,6 +5,7 @@ fun main(){
     val numberTwo = 8
     println("Введите результат сложения чисел. $numberOne + $numberTwo =")
     val result = readLine()!!.toInt()
+
     if (result == numberOne + numberTwo)
         println("Добро пожаловать!")
     else
