@@ -1,11 +1,16 @@
 package lesson_5
 
 fun main(){
-    val numberOne = 7
-    val numberTwo = 8
+    val numberOne = (1..50).random()
+    val numberTwo = (1..50).random()
+
     println("Введите результат сложения чисел. $numberOne + $numberTwo =")
     val result = readln().toIntOrNull()
-    if (result == null) println("Введен неправильный тип данных")
+
+    if (result == null) {
+        println("Введен неправильный тип данных")
+        throw Exception("Введен неправильный тип данных")
+    }
     else {
         if (result == numberOne + numberTwo)
             println("Добро пожаловать!")
