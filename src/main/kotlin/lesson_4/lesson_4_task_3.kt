@@ -1,12 +1,11 @@
 package lesson_4
 
 fun main(){
-    val isWeatherSunny = "Sunny"
-    val isTentOpen = "Open"
-    val isHumidityCorrect = 20
-    val isItNotWinter = "Winter"
+    val isWeatherSunny = true
+    val isTentOpen = true
+    val isHumidityCorrect = true
+    val isItNotWinter = false
 
-    val result = isWeatherSunny == "Sunny" && isTentOpen == "Open"
-            && isHumidityCorrect == 20 && isItNotWinter != "Winter"
+    val result = isWeatherSunny && isTentOpen && isHumidityCorrect && isItNotWinter
     println("Благоприятные ли условия сейчас для роста бобовых? $result")
 }
