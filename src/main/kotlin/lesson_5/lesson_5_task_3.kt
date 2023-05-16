@@ -11,8 +11,8 @@ fun main(){
     val result =
         if (numberOne == FIRST_WIN && numberTwo == SECOND_WIN)
             "Поздравляем! Вы выиграли главный приз!"
-        else if (numberOne == FIRST_WIN || numberTwo == SECOND_WIN || numberOne == SECOND_WIN
-            || numberTwo == FIRST_WIN)
+        else if (numberOne == FIRST_WIN || numberTwo == SECOND_WIN || numberOne == SECOND_WIN ||
+            numberTwo == FIRST_WIN)
             "Вы выиграли утешительный приз!"
         else
             "Неудача! Крутите барабан!"
