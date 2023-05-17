@@ -1,41 +1,18 @@
 package lesson_6
 
-import kotlin.system.exitProcess
 fun main() {
 
-    while (true) {
+    println("Регистрация нового пользователя. Введите Ваш:\n - Логин \n - Пароль")
+    val userName = readln()
+    val userPassword = readln()
+    println("Регистрация прошла успешно!")
 
-        println("Регистрация нового пользователя.\nВведите ваш логин:")
-        val userName = readln()
+    do {
+        println("Чтобы войти в приложение введите Ваш:\n - Логин \n - Пароль")
+        val isUserNameTrue = (readln() == userName)
+        val isUserPasswordTrue = (readln() == userPassword)
 
-        if (userName.isBlank())
-            println("Ошибка. Попробуйте снова.")
-        else {
-            println("Введите пароль:")
-            val userPassword = readln()
+    } while (!isUserNameTrue || !isUserPasswordTrue)
 
-            if (userPassword.isBlank())
-                println("Ошибка. Попробуйте снова.")
-            else {
-                println("Регистрация прошла успешно!")
-
-                while (true) {
-                    println("Чтобы войти в приложение введите ваш логин.")
-
-                    if (readln() != userName)
-                        println("Ошибка.")
-                    else {
-                        println("Авторизация пользователя $userName.\nВведите пароль:")
-
-                        if (readln() != userPassword)
-                            println("Ошибка.")
-                        else {
-                            println("Авторизация прошла успешно!")
-                            exitProcess(1)
-                        }
-                    }
-                }
-            }
-        }
-    }
+    println("Авторизация прошла успешно!")
 }
