@@ -7,8 +7,7 @@ fun main() {
 
     var counter = 5
 
-    while (counter > 0) {
-        counter--
+    while (counter-- > 0) {
         println("Введите число")
 
         if (readln().toInt() == winningNumber) {
