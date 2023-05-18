@@ -8,7 +8,7 @@ fun main() {
 
     for (i in dishIngredients) {
 
-        while (i == yourIngredient.lowercase()) {
+        if (i == yourIngredient.lowercase()) {
             println("Ингредиент $i в рецепте есть")
             return
         }
