@@ -12,7 +12,7 @@ fun main() {
         val ingredient = readln()
         arrayOfIngredients[i-1] = ingredient
     }
-
+    println("Готово! Вы создали следующий список ингредиентов:")
     for (i in arrayOfIngredients)
         println(i)
 }
