@@ -6,12 +6,8 @@ fun main() {
     println("Введите название ингредиента, чтобы узнать есть ли он в блюде:")
     val yourIngredient = readln()
 
-    dishIngredients.forEach { i ->
-
-        if (i == yourIngredient.lowercase()) {
-            println("Ингредиент $i в рецепте есть")
-            return
-        }
-    }
-    println("Такого ингредиента в рецепте нет")
+    if (yourIngredient.lowercase() in dishIngredients)
+        println("Ингредиент $yourIngredient в рецепте есть")
+    else
+        println("Такого ингредиента в рецепте нет")
 }
