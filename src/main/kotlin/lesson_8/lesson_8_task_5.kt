@@ -3,16 +3,12 @@ package lesson_8
 fun main() {
 
     println("Введите количество ингредиентов в списке:")
+    val quantity = readln().toInt()
 
-    val arrayOfIngredients = Array(readln().toInt(), {" "})
+    println("Введите ингредиенты, каждый с новой строки:")
+    val arrayOfIngredients = Array(quantity) { readln() }
 
-    for (i in arrayOfIngredients.indices) {
-
-        println("Введите ингредиент №${i+1}:")
-        arrayOfIngredients[i] = readln()
-    }
     println("Готово! Вы создали следующий список ингредиентов:")
-
     for (i in arrayOfIngredients)
         println(i)
 }
