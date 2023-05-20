@@ -6,16 +6,10 @@ fun main() {
 
     val passwordLength = readln().toInt()
     var password = ""
+    val chars = ('a'..'z') + ('A'..'Z') + ('0'..'9')
 
     for (i in 1..passwordLength) {
-
-        val range1 = (0..9).random()
-        val range2 = ('a'..'z').random()
-        val range3 = ('A'..'Z').random()
-        val randomResult = arrayOf(range1, range2, range3).random()
-
-        password += randomResult
+        password += chars.random()
     }
-
     println(password)
 }
