@@ -8,8 +8,8 @@ fun main() {
     var password = ""
     val chars = ('a'..'z') + ('A'..'Z') + ('0'..'9')
 
-    for (i in 1..passwordLength) {
+    for (i in 1..passwordLength)
         password += chars.random()
-    }
+
     println(password)
 }
