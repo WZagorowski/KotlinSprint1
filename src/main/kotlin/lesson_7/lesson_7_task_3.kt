@@ -1,10 +1,12 @@
 package lesson_7
 
 fun main() {
-    println("Enter your number")
-    val yourNumber = readln().toInt()
-    val rangeNumbers = 0..yourNumber step (2)
+    var result = ""
 
-    for (number in rangeNumbers)
-        print("$number")
+    println("Enter your number")
+
+    for (number in 0..readln().toInt() step 2)
+        result += "$number,"
+
+    print(result)
 }
