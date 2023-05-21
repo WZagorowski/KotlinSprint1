@@ -11,7 +11,7 @@ fun  main() {
 
         println("Введите сумму чисел $numberOne и $numberTwo")
 
-        if (readln().toInt() == numberOne + numberTwo) {
+        if (readln() == (numberOne + numberTwo).toString()) {
             println("Добро пожаловать!")
             break
         }
