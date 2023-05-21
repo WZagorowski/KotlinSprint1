@@ -16,7 +16,5 @@ fun main() {
     } else
         return
 
-    println("Теперь в рецепте есть следующие ингредиенты:")
-    for (i in listOfIngredients)
-        println(i)
+    println("Теперь в рецепте есть следующие ингредиенты: $listOfIngredients")
 }
