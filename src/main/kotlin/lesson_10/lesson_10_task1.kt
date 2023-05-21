@@ -3,23 +3,19 @@ fun main() {
 
     println("Ход человека (нажми \"Enter\" для броска):")
     readln()
-
-    val humanOne = bones()
-    val humanTwo = bones()
-    println("Человек выбросил $humanOne и $humanTwo")
+    val humanBones = bones()
+    println("Человек выбросил $humanBones")
 
     println("Ход компьютера (нажми \"Enter\" для броска):")
     readln()
+    val computerBones = bones()
+    println("Компьютер выбросил $computerBones")
 
-    val computerOne = bones()
-    val computerTwo = bones()
-    println("Компьютер выбросил $computerOne и $computerTwo")
-
-    if (humanOne + humanTwo > computerOne + computerTwo)
+    if (humanBones > computerBones)
         println("Победил человек")
-    else if (humanOne + humanTwo == computerOne + computerTwo)
+    else if (humanBones == computerBones)
         println("Ничья")
     else
         println("Победил компьютер")
 }
-fun bones() = (1..6).random()
+fun bones(): Int = (1..6).random() + (1..6).random()
