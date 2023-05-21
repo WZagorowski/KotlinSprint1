@@ -6,5 +6,5 @@ fun main() {
     println("В рецепте есть следующие ингредиенты:")
 
     for (i in dishIngredients)
-    println(i)
+        println(i)
 }
