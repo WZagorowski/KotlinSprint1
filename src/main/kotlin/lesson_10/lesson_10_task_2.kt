@@ -1,17 +1,17 @@
 package lesson_10
+
 fun main() {
 
-    println("Enter your Username:")
-    val userName = readln()
-    val isUserNameOk = checking(userName)
+        do {
+            println("Username and password must be longer than 3 symbols.\nEnter your Username:")
+            val isUserNameOk = setCheckLength(readln())
 
-    println("Enter your Password:")
-    val userPassword = readln()
-    val isUserPasswordOk = checking(userPassword)
+            println("Enter your Password:")
+            val isUserPasswordOk = setCheckLength(readln())
+        }
+        while (!isUserNameOk || !isUserPasswordOk)
 
-    if (isUserNameOk && isUserPasswordOk)
-        println("Welcome $userName!")
-    else
-        println("Username or password is not long enough")
+        println("Welcome!")
 }
-fun checking(userData: String): Boolean = userData.lastIndex >= 3
+
+fun setCheckLength(userData: String): Boolean = userData.lastIndex >= 3
