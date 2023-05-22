@@ -2,24 +2,23 @@ package lesson_9
 
 fun main() {
 
+    val arrayOfIngredients = mutableSetOf<String>()
     val listOfIngredients = mutableListOf<String>()
 
-    println("Введите 5 ингридиентов, каждый с новой строки: ")
+    println("Введите 5 ингредиентов, каждый с новой строки:")
 
     for (i in 1..5) {
-        val ingredient = readln()
+        arrayOfIngredients.add(readln())
+    }
 
-        if (listOfIngredients.contains(ingredient))
-            continue
-        else
-            listOfIngredients.add(ingredient)
+    arrayOfIngredients.forEach() { it ->
+        listOfIngredients.add(it)
     }
 
     listOfIngredients.sort()
-    var result: String = ""
 
-    listOfIngredients.forEach {
-        result += "$it, "
-    }
-        println(result.capitalize().dropLast(2) + ".")
+    listOfIngredients[0] = listOfIngredients[0].replaceFirstChar{it.uppercase()}
+    listOfIngredients[listOfIngredients.lastIndex] += "."
+
+    println(listOfIngredients)
 }
