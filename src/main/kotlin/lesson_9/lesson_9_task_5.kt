@@ -19,7 +19,7 @@ fun main() {
     var result: String = ""
 
     listOfIngredients.forEach {
-        result += "$it,"
+        result += "$it, "
     }
-        println(result.capitalize() + ".")
+        println(result.capitalize().dropLast(2) + ".")
 }
