@@ -13,7 +13,7 @@ fun main() {
         id = 1110,
         login = "Крокодил",
         password = "777GENA",
-        email = "gennadiy@krokodile.com"
+        email = "gennadiy@krokodile.com",
     )
 
     println(userOne.id)
