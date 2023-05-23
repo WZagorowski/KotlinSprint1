@@ -18,4 +18,5 @@ fun main() {
     else
         println("Победил компьютер")
 }
+
 fun bones(): Int = (1..6).random() + (1..6).random()
