@@ -4,8 +4,8 @@ fun main() {
 
     println("Registration. Enter your Username:")
     val userName = readln()
-    val password = randomPassword()
-    val isUserNameOk = checkLength(userName)
+    val password = getRandomPassword()
+    val isUserNameOk = validateInputLength(userName)
 
     if (!isUserNameOk) {
         println("Username not long enough")
@@ -17,15 +17,15 @@ fun main() {
 
         println("\nAuthorization. Enter your\nUsername:\nPassword:")
 
-        val isUserNameTrue = checkTrue(userName)
-        val isPasswordTrue = checkTrue(password)
+        val isUserNameTrue = validateInputData(userName)
+        val isPasswordTrue = validateInputData(password)
 
         if (!isUserNameTrue || !isPasswordTrue) {
             println("Error! Try again.")
             break
         }
         else do {
-            val yourCode = randomCode().toString()
+            val yourCode = getRandomSms().toString()
             println("Your SMS code is: $yourCode \nEnter your SMS code:")
         } while (readln() != yourCode)
 
@@ -33,14 +33,19 @@ fun main() {
         return
     }
 }
-fun checkLength(userData: String): Boolean = userData.lastIndex >= 3
-fun randomPassword(): String {
+
+fun validateInputLength(userData: String): Boolean = userData.lastIndex >= 3
+
+fun getRandomPassword(): String {
     var password = ""
-    val char: List<Char> = ('1'..'9') + ('a'..'z') + ('A'..'Z')
+    val char = ('1'..'9') + ('a'..'z') + ('A'..'Z')
 
     for (i in 1..4)
         password += char.random()
+
     return password
 }
-fun checkTrue(userData: String): Boolean = userData == readln()
-fun randomCode() = (1000..9999).random()
+
+fun validateInputData(userData: String): Boolean = userData == readln()
+
+fun getRandomSms() = (1000..9999).random()
