@@ -4,15 +4,23 @@ fun main() {
 
     println("Укажите длину вашего случайного пароля:")
     val passwordLength = readln().toInt()
-    val password = randomChar(passwordLength)
+
+    val password = getRandomPassword(passwordLength)
 
     println("Ваш пароль готов:\n$password")
 }
 
-fun randomChar(passwordLength: Int): String {
+fun getRandomPassword(passwordLength: Int): String {
+
     var password = ""
 
-    for (i in 1..passwordLength)
-        password += "0123456789!\"#\$%&'()*+,-./ ".random()
+        for (i in 1..passwordLength) {
+
+            password += if (i % 2 == 1)
+                (32..47).random().toChar()
+            else
+                ('0'..'9').random()
+        }
+
     return password
 }
