@@ -6,7 +6,7 @@ fun main() {
     var humanWins = 0
 
     do {
-        humanWins = getNewRound(humanWins)
+        humanWins = startNewRound(humanWins)
         println("Хотите бросить кости еще раз (да/нет)?")
 
     } while (readln() == "да")
@@ -14,7 +14,7 @@ fun main() {
         println("Человек выйграл партий: $humanWins")
 }
 
-fun getNewRound(humanWinsBefore: Int): Int {
+fun startNewRound(humanWinsBefore: Int): Int {
 
     val humanResult = getShootDice()
     println("Человек выбросил $humanResult")
