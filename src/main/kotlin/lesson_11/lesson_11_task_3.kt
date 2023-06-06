@@ -13,7 +13,6 @@ fun main() {
         name = "Реал",
         membersAvatars = listOf("Image2001", "Image2002", "Image 2003"),
     )
-
 }
 
 class Room(
