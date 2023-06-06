@@ -3,12 +3,12 @@ fun main() {
 
     println("Ход человека (нажми \"Enter\" для броска):")
     readln()
-    val humanResult = getShootDice()
+    val humanResult = getShootDice1()
     println("Человек выбросил $humanResult")
 
     println("Ход компьютера (нажми \"Enter\" для броска):")
     readln()
-    val computerResult = getShootDice()
+    val computerResult = getShootDice1()
     println("Компьютер выбросил $computerResult")
 
     if (humanResult > computerResult)
@@ -19,4 +19,4 @@ fun main() {
         println("Победил компьютер")
 }
 
-fun getShootDice(): Int = (1..6).random() + (1..6).random()
+fun getShootDice1(): Int = (1..6).random() + (1..6).random()
