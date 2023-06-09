@@ -27,7 +27,7 @@ fun main() {
     println("Email ${userTwo.email}")
 }
 
-class User(
+private class User(
     val id: Int,
     val login: String,
     val password: String,
