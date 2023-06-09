@@ -16,7 +16,7 @@ fun main() {
 
 }
 
-class Room(
+private class Room(
     val cover: String,
     val name: String,
     val membersAvatars: List<String>,
