@@ -11,7 +11,7 @@ fun main() {
 
     val listOfIngredients = arrayOfIngredients.sorted().toMutableList()
 
-    listOfIngredients[0] = listOfIngredients[0].replaceFirstChar{it.uppercase()}
+    listOfIngredients[0] = listOfIngredients[0].replaceRange(0, 1, listOfIngredients[0][0].uppercase())
     listOfIngredients[listOfIngredients.lastIndex] += "."
 
     println(listOfIngredients)
