@@ -86,12 +86,10 @@ private class Contact(
 
     fun addToFavourite(contact: Contact) {
         favouriteContacts.add(contact.name)
-        println("Контакт ${contact.name} добавлен в избранное")
-
     }
 
     fun showContact(){
-        println("\n$name\n$avatar\n$firstName$lastName\n$mobileNumber\n$homeNumber\n$email")
-        println("Избранные контакты: $favouriteContacts")
+        println("\n$name\n$avatar\n$firstName $lastName\n$mobileNumber\n$homeNumber\n$email\n\nИзбранные контакты:")
+        favouriteContacts.forEach { println(it) }
     }
 }
