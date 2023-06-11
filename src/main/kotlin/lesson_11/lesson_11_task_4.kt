@@ -61,4 +61,28 @@ private class Contact(
             favouritesList.forEach { println ("${it.name}\n${it.mobileNumber}") }
         }
     }
+
+    fun writeSMS(mobileNumber: String) {
+        println("SMS сообщение отправлено на номер: $mobileNumber")
+    }
+
+    fun phoneCall(mobileNumber: String) {
+        println("Вызов: $mobileNumber")
+    }
+
+    fun videoCall(mobileNumber: String) {
+        println("Видео вызов: $mobileNumber")
+    }
+
+    fun writeEmail(email: String) {
+        println("Email отправлен на адрес: $email")
+    }
+
+    fun videoCallInApp(mobileNumber: String) {
+        println("Открыть приложение FaceTime. Совершить видео вызов на номер: $mobileNumber")
+    }
+
+    fun phoneCallInApp(mobileNumber: String) {
+        println("Открыть приложение FaceTime. Совершить аудио вызов на номер: $mobileNumber")
+    }
 }
