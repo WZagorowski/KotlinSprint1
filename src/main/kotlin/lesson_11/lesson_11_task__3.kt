@@ -31,7 +31,7 @@ private class Room(
     val cover: String,
     val name: String,
     val members: MutableList<Member>,
-) {
+    ) {
 
     fun showMembersInTheRoom() {
         println("В комнате \"$name\" видим картинки пользователей:")
