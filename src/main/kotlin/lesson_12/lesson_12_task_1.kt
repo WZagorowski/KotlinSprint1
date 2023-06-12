@@ -9,10 +9,10 @@ fun main() {
     weather12062023.atmospherePressure = 754.29
 
     val weather13062023 = WeatherData()
-    weather12062023.dayTemperature = +18
-    weather12062023.nightTemperature = +9
-    weather12062023.isItRaining = true
-    weather12062023.atmospherePressure = 753.45
+    weather13062023.dayTemperature = +18
+    weather13062023.nightTemperature = +9
+    weather13062023.isItRaining = true
+    weather13062023.atmospherePressure = 753.45
 }
 
 private class WeatherData {
