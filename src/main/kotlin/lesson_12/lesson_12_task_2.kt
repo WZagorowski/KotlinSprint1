@@ -12,10 +12,10 @@ fun main() {
 }
 
 private class WeatherData(dayTemperature: Int, nightTemperature: Int, isItRaining: Boolean, atmospherePressure: Double,) {
-    var dayTemperature = dayTemperature
-    var nightTemperature = nightTemperature
-    var isItRaining = isItRaining
-    var atmospherePressure = atmospherePressure
+    val dayTemperature = dayTemperature
+    val nightTemperature = nightTemperature
+    val isItRaining = isItRaining
+    val atmospherePressure = atmospherePressure
 
     fun outputWeatherData() {
         println("""
