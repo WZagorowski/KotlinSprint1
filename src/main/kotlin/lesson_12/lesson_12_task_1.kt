@@ -13,6 +13,9 @@ fun main() {
     weather13062023.nightTemperature = +9
     weather13062023.isItRaining = true
     weather13062023.atmospherePressure = 753.45
+
+    weather12062023.outputWeatherData()
+    weather13062023.outputWeatherData()
 }
 
 private class WeatherData {
@@ -20,4 +23,13 @@ private class WeatherData {
     var nightTemperature: Int = 0
     var isItRaining: Boolean = true
     var atmospherePressure: Double = 0.0
+
+    fun outputWeatherData() {
+        println("""
+            
+            Температура днем: $dayTemperature
+            Температура ночью: $nightTemperature
+            Дождь в этот день: $isItRaining
+            Атмосферное давление: $atmospherePressure """.trimIndent())
+    }
 }
