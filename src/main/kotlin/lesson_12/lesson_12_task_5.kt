@@ -12,10 +12,10 @@ fun main() {
             rainyDays = (0..1).random(),))
     }
 
-    var sumDayTemperature: Double = 0.0
-    var sumNightTemperature: Double = 0.0
-    var sumPressure: Double = 0.0
-    var rainyDays: Int = 0
+    var sumDayTemperature = 0.0
+    var sumNightTemperature = 0.0
+    var sumPressure = 0.0
+    var rainyDays = 0
 
     for (it in listOfData10) {
         sumDayTemperature += it.dayTemperature
