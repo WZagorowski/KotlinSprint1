@@ -5,11 +5,14 @@ fun main() {
     val listOfData10 = mutableListOf<WeatherData>()
 
     for (i in 1..10) {
-        listOfData10.add(WeatherData(
-            dayTemperature = (15..+30).random(),
-            nightTemperature = (-5..+10).random(),
-            atmospherePressure = (750..765).random(),
-            rainyDays = (0..1).random(),))
+        listOfData10.add(
+            WeatherData(
+                dayTemperature = (15..30).random(),
+                nightTemperature = (-5..10).random(),
+                atmospherePressure = (750..765).random(),
+                rainyDays = (0..1).random(),
+            )
+        )
     }
 
     var sumDayTemperature = 0.0
@@ -24,12 +27,14 @@ fun main() {
         rainyDays += it.rainyDays
     }
 
-    println("""
-            Статистика за ${listOfData10.size} дней:
-            Средняя температура днем: ${sumDayTemperature/listOfData10.size}
-            Средняя температура ночью: ${sumNightTemperature/listOfData10.size}
-            Среднее атмосферное давление: ${sumPressure/listOfData10.size}
-            Количество дождливых дней: $rainyDays""".trimIndent())
+    println(
+        """
+        Статистика за ${listOfData10.size} дней:
+        Средняя температура днем: ${sumDayTemperature / listOfData10.size}
+        Средняя температура ночью: ${sumNightTemperature / listOfData10.size}
+        Среднее атмосферное давление: ${sumPressure / listOfData10.size}
+        Количество дождливых дней: $rainyDays""".trimIndent()
+    )
 }
 
 private class WeatherData(
@@ -37,4 +42,4 @@ private class WeatherData(
     val nightTemperature: Int,
     val atmospherePressure: Int,
     val rainyDays: Int,
-    )
+)
