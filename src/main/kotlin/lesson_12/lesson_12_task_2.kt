@@ -11,7 +11,13 @@ fun main() {
     weather130623.outputWeatherData()
 }
 
-private class WeatherData(dayTemperature: Int, nightTemperature: Int, isItRaining: Boolean, atmospherePressure: Double,) {
+private class WeatherData(
+    dayTemperature: Int,
+    nightTemperature: Int,
+    isItRaining: Boolean,
+    atmospherePressure: Double,
+    ) {
+
     val dayTemperature = dayTemperature
     val nightTemperature = nightTemperature
     val isItRaining = isItRaining
