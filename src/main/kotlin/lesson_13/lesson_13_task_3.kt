@@ -12,16 +12,27 @@ fun main() {
     phonebook.outputAllContacts()
 }
 
-private class Phonebook3 (val listOfContacts: MutableList<Contact3> = mutableListOf()) {
+private class Phonebook3(val listOfContacts: MutableList<Contact3> = mutableListOf()) {
 
-    fun addContact3 (name: String, phoneNumber: Long, company: String?) {
+    fun addContact3(name: String, phoneNumber: Long, company: String?) {
         listOfContacts.add(Contact3(name, phoneNumber, company))
     }
 
     fun outputAllContacts() {
-    listOfContacts.forEach { println("Имя: ${it.name} \nНомер: ${it.phoneNumber}" +
-            "\nКомпания: ${it.company?: "не указано"}\n") }
+        listOfContacts.forEach {
+            println(
+                "Имя: ${it.name} \nНомер: ${it.phoneNumber}\nКомпания: ${it.company ?: "не указано"}\n"
+            )
+        }
     }
 
-    class Contact3(val name: String, val phoneNumber: Long, val company: String? = null,)
+    class Contact3(val name: String, val phoneNumber: Long) {
+
+        var company: String? = null
+
+        constructor(name: String, phoneNumber: Long, company: String?) : this(name, phoneNumber) {
+
+            this.company = company
+        }
+    }
 }
