@@ -35,7 +35,9 @@ private class Forum(
 
     fun printThread() {
         println("\nИстория сообщений:")
-        messagesHistory.forEach { println("${it.userLogin}: ${it.messageText}") }
+        messagesHistory.forEach {
+            println("${it.userLogin}: ${it.messageText}")
+        }
     }
 
     class User5(
