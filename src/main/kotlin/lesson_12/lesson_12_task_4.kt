@@ -2,11 +2,11 @@ package lesson_12
 
 fun main() {
 
-    val weatherToday = WeatherData(23, 10, 754.29)
-    val weatherTomorrow = WeatherData(18, 9, 753.45, true)
+    val weatherToday = WeatherData4(23, 10, 754.29)
+    val weatherTomorrow = WeatherData4(18, 9, 753.45, true)
 }
 
-private class WeatherData(
+private class WeatherData4(
     val dayTemperature: Int,
     val nightTemperature: Int,
     val atmospherePressure: Double,
