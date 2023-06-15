@@ -2,13 +2,13 @@ package lesson_12
 
 fun main() {
 
-    val weather12062023 = WeatherData()
+    val weather12062023 = WeatherData1()
     weather12062023.dayTemperature = 23
     weather12062023.nightTemperature = 10
     weather12062023.isItRaining = false
     weather12062023.atmospherePressure = 754.29
 
-    val weather13062023 = WeatherData()
+    val weather13062023 = WeatherData1()
     weather13062023.dayTemperature = 18
     weather13062023.nightTemperature = 9
     weather13062023.isItRaining = true
@@ -18,7 +18,7 @@ fun main() {
     weather13062023.outputWeatherData()
 }
 
-private class WeatherData {
+private class WeatherData1 {
     var dayTemperature: Int = 0
     var nightTemperature: Int = 0
     var isItRaining: Boolean = true
