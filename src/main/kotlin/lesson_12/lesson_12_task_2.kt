@@ -2,16 +2,16 @@ package lesson_12
 
 fun main() {
 
-    val weather110623 = WeatherData(+21,+11,false,753.25,)
-    val weather120623 = WeatherData(+23,+10,false,754.29,)
-    val weather130623 = WeatherData(+18, +9,true, 753.45,)
+    val weather110623 = WeatherData2(+21,+11,false,753.25,)
+    val weather120623 = WeatherData2(+23,+10,false,754.29,)
+    val weather130623 = WeatherData2(+18, +9,true, 753.45,)
 
     weather110623.outputWeatherData()
     weather120623.outputWeatherData()
     weather130623.outputWeatherData()
 }
 
-private class WeatherData(
+private class WeatherData2(
     dayTemperature: Int,
     nightTemperature: Int,
     isItRaining: Boolean,
