@@ -18,7 +18,11 @@ fun main() {
     ship3.breakTheIce()
 }
 
-open class StandardShip2(val name: String, val speed: Int, val capacity: Int) {
+open class StandardShip2(
+    val name: String,
+    val speed: Int,
+    val capacity: Int,
+) {
 
     fun printSpeed() {
         println("Скорость корабля $name составляет: $speed узлов.")
@@ -29,10 +33,20 @@ open class StandardShip2(val name: String, val speed: Int, val capacity: Int) {
     }
 }
 
-class Freighter(name: String, speed: Int, capacity: Int, val maxWeight: Int) : StandardShip2(name, speed, capacity)
+class Freighter(
+    name: String,
+    speed: Int,
+    capacity: Int,
+    val maxWeight: Int,
+) : StandardShip2(name, speed, capacity)
 
-class Icebreaker(name: String, speed: Int, capacity: Int, val power: Double, val isAtomic: Boolean) :
-    StandardShip2(name, speed, capacity) {
+class Icebreaker(
+    name: String,
+    speed: Int,
+    capacity: Int,
+    val power: Double,
+    val isAtomic: Boolean,
+) : StandardShip2(name, speed, capacity) {
 
     fun breakTheIce() {
         println("Ледокол $name расчищает морской путь от льда.")
