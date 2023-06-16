@@ -28,7 +28,11 @@ open class Topic(
     }
 }
 
-class Comment(creatorName: String, textMessage: String, private val topic: Topic) : Topic(creatorName, textMessage) {
+class Comment(
+    creatorName: String,
+    textMessage: String,
+    private val topic: Topic,
+) : Topic(creatorName, textMessage) {
 
     fun showComment() {
         println(
