@@ -16,7 +16,7 @@ private class Phonebook4(val listOfContacts: MutableList<Contact4> = mutableList
             println("Введите имя пользователя:")
             var name = readlnOrNull()
 
-            if (name?.isBlank() == true)
+            if (name?.isEmpty() == true)
                 name = null
 
             println("Введите телефонный номер:")
@@ -34,7 +34,7 @@ private class Phonebook4(val listOfContacts: MutableList<Contact4> = mutableList
             println("Введите название компании:")
             var company = readlnOrNull()
 
-            if (company?.isBlank() == true)
+            if (company?.isEmpty() == true)
                 company = null
 
             if (name != null || company != null) {
