@@ -18,7 +18,7 @@ abstract class Vehicle(
     val vehicleName: String,
     val quantityOfPassengers: Int,
     val maxLoadWeight: Int,
-    )
+)
 
 class PassengerCar(
     vehicleName: String,
