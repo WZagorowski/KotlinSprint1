@@ -1,23 +1,23 @@
 package lesson_14
 
+import kotlin.math.PI
 import kotlin.math.sqrt
 
 fun main() {
-    val figure1 = Circle("red", 5.5)
-    val figure2 = Circle("black", 2.5)
-    val figure3 = Rectangle("green", 18.0, 10.5)
-    val figure4 = Rectangle("red", 12.7, 7.4)
-    val figure5 = Triangle("black", 7.1, 4.4, 5.5)
-    val figure6 = Triangle("red", 12.3, 6.5, 7.2)
+    val figure1 = Circle(RED, 5.5)
+    val figure2 = Circle(BLACK, 2.5)
+    val figure3 = Rectangle(GREEN, 18.0, 10.5)
+    val figure4 = Rectangle(RED, 12.7, 7.4)
+    val figure5 = Triangle(BLACK, 7.1, 4.4, 5.5)
+    val figure6 = Triangle(RED, 12.3, 6.5, 7.2)
     val result1 = Result(listOf(figure1, figure2, figure3, figure4, figure5, figure6))
 
-    val resultPerimeter1 = result1.getResultPerimeter("red")
-    val resultArea1 = result1.getResultArea("red")
+    val resultPerimeter1 = result1.getResultPerimeter(RED)
+    val resultArea1 = result1.getResultArea(RED)
 
     println("Sum of the perimeters is " + "%.2f".format(resultPerimeter1))
     println("Sum of the areas is " + "%.2f".format(resultArea1))
 }
-
 
 abstract class Figure(val color: String) {
 
@@ -27,15 +27,13 @@ abstract class Figure(val color: String) {
 
 class Circle(color: String, private val radius: Double) : Figure(color) {
 
-    override fun getAreaOfFigure() = 3.14 * radius * radius
-
-    override fun getPerimeterOfFigure() = 2 * 3.14 * radius
+    override fun getAreaOfFigure() = PI * radius * radius
+    override fun getPerimeterOfFigure() = 2 * PI * radius
 }
 
 class Rectangle(color: String, private val length: Double, private val width: Double) : Figure(color) {
 
     override fun getAreaOfFigure() = length * width
-
     override fun getPerimeterOfFigure() = (length + width) * 2
 }
 
@@ -75,3 +73,7 @@ class Result(private val resultList: List<Figure>) {
         return resultArea
     }
 }
+
+const val RED = "red"
+const val GREEN = "green"
+const val BLACK = "black"
