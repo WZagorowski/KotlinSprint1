@@ -15,8 +15,8 @@ fun main() {
     val resultPerimeter1 = result1.getResultPerimeter(RED)
     val resultArea1 = result1.getResultArea(RED)
 
-    println("Sum of the perimeters is " + "%.2f".format(resultPerimeter1))
-    println("Sum of the areas is " + "%.2f".format(resultArea1))
+    println("Sum of the perimeters is ${"%.2f".format(resultPerimeter1)}")
+    println("Sum of the areas is ${"%.2f".format(resultArea1)}")
 }
 
 abstract class Figure(val color: String) {
