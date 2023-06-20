@@ -1,48 +1,65 @@
 package lesson_15
 
 fun main() {
-    val car1 = PassengerCar("Mazda")
-    val car2 = PassengerCar("Toyota")
-    val truck1 = AutoTruck("MAN")
+    val car1 = PassengerCar("Mazda", 3)
+    val car2 = PassengerCar("Toyota", 3)
+    val truck1 = AutoTruck("MAN", realLoadWeight = 2000)
 
     car1.transportPassenger()
+    car1.ride()
     car2.transportPassenger()
+    car2.ride()
     truck1.transportLoad()
     truck1.transportPassenger()
-    car1.ride()
-    car2.ride()
     truck1.ride()
 }
 
 abstract class Vehicle(
     val vehicleName: String,
     val quantityOfPassengers: Int,
+    val realLoadWeight: Int,
+    val maxQuantityOfPassengers: Int,
     val maxLoadWeight: Int,
 )
 
 class PassengerCar(
     vehicleName: String,
-    quantityOfPassengers: Int = 3,
-) : Vehicle(vehicleName, quantityOfPassengers, maxLoadWeight = 0), Movable, PassengerAcceptable {
+    quantityOfPassengers: Int = 0,
+    maxQuantityOfPassengers: Int = 3,
+) : Vehicle(
+    vehicleName,
+    quantityOfPassengers,
+    realLoadWeight = 0,
+    maxQuantityOfPassengers,
+    maxLoadWeight = 0,
+), Movable, PassengerAcceptable {
 
     override fun ride() = println("Легковой автомобиль $vehicleName двигается по маршруту.")
 
     override fun transportPassenger() =
-        println("Легковой автомобиль $vehicleName перевезет пассажиров: не более $quantityOfPassengers чел.")
+        println("Легковой автомобиль $vehicleName перевозит пассажиров: $quantityOfPassengers.")
 }
 
 class AutoTruck(
     vehicleName: String,
-    quantityOfPassengers: Int = 1,
+    quantityOfPassengers: Int = 0,
+    realLoadWeight: Int = 0,
+    maxQuantityOfPassengers: Int = 1,
     maxLoadWeight: Int = 2000,
-) : Vehicle(vehicleName, quantityOfPassengers, maxLoadWeight), Movable, PassengerAcceptable, LoadAcceptable {
+) : Vehicle(
+    vehicleName,
+    quantityOfPassengers,
+    realLoadWeight,
+    maxQuantityOfPassengers,
+    maxLoadWeight,
+), Movable, PassengerAcceptable, LoadAcceptable {
 
     override fun ride() = println("Грузовик $vehicleName двигается по маршруту.")
 
     override fun transportPassenger() =
-        println("Грузовик $vehicleName перевезет пассажиров: не более $quantityOfPassengers чел.")
+        println("Грузовик $vehicleName перевозит пассажиров: $quantityOfPassengers.")
 
-    override fun transportLoad() = println("Грузовик $vehicleName перезет грузов: не более $maxLoadWeight кг.")
+    override fun transportLoad() = println("Грузовик $vehicleName переозит грузов: $realLoadWeight кг.")
 }
 
 interface Movable {
