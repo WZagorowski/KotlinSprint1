@@ -10,9 +10,8 @@ fun main() {
 
 private class Circle6(protected val radius: Double) {
 
-    private val pi = 3.14
-
-    fun getArea() = pi * radius * radius
-    fun getPerimeter() = 2 * pi * radius
+    fun getArea() = PI * radius * radius
+    fun getPerimeter() = 2 * PI * radius
 }
 
+private const val PI = 3.14
