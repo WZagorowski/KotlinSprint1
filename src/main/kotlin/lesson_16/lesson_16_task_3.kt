@@ -8,12 +8,18 @@ fun main() {
 
 private class User16(val userName16: String) {
 
-    private val password16 = "qwerty123"
+    private var password16 = ""
+
+    init {
+        println("Для завершения регистрации установите пароль:")
+        password16 = readln()
+        println("Пароль для пользователя $userName16 успешно сохранен.")
+    }
 
     fun checkPassword() {
 
         do {
-            println("Введите пароль:")
+            println("Для входа введите ваш пароль:")
         } while (readln() != password16)
         println("Добро пожаловать, $userName16!")
     }
