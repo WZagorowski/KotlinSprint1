@@ -1,6 +1,6 @@
 package lesson_17
 
-private class Quiz() {
+private class Quiz {
 
     var question: String = ""
         set(value) {
