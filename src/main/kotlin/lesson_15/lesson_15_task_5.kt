@@ -1,9 +1,9 @@
 package lesson_15
 
 fun main() {
-    val car1 = PassengerCar("Mazda", 3)
-    val car2 = PassengerCar("Toyota", 3)
-    val truck1 = AutoTruck("MAN", realLoadWeight = 2000)
+    val car1 = PassengerCar(vehicleName = "Mazda", quantityOfPassengers = 3)
+    val car2 = PassengerCar(vehicleName = "Toyota", quantityOfPassengers = 3)
+    val truck1 = AutoTruck(vehicleName = "MAN", realLoadWeight = 2000)
 
     car1.transportPassenger()
     car1.ride()
