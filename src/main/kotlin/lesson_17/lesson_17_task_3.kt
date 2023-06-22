@@ -10,18 +10,8 @@ fun main() {
 private class Folder(name: String, numberOfFiles: Int, val isFolderSecret: Boolean = false) {
 
     val name = name
-        get() {
-            return if (!isFolderSecret) {
-                field
-            } else
-                "Скрытая папка"
-        }
+        get() = if (!isFolderSecret) field else "Скрытая папка"
 
     val numberOfFiles = numberOfFiles
-        get() {
-            return if (!isFolderSecret) {
-                field
-            } else
-                0
-        }
+        get() = if (!isFolderSecret) field else 0
 }
