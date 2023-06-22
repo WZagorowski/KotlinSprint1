@@ -1,7 +1,7 @@
 package lesson_16
 
 fun main() {
-    val orc1 = Player("Thrall")
+    val orc1 = Player(name = "Thrall", healthPoints = 100, attackPower = 15)
 
     orc1.getDamage(25)
     orc1.getMedicine(5)
@@ -13,10 +13,7 @@ fun main() {
     orc1.showPlayerInfo()
 }
 
-private class Player(private val name: String) {
-
-    private var healthPoints: Int = 100
-    private var attackPower: Int = 15
+private class Player(private val name: String, private var healthPoints: Int, private var attackPower: Int) {
 
     fun getDamage(damage: Int) {
         healthPoints -= damage
