@@ -12,7 +12,7 @@ fun main() {
         listOf("Клавиатура", "Коврик", "Мышь", "Подставка"),
     )
 
-    val arrayOfNotes = arrayOf<NewOrder1>(order1, order2)
+    val arrayOfNotes = arrayOf(order1, order2)
     showAllOrders(arrayOfNotes)
 }
 
@@ -40,5 +40,5 @@ class ListItemOrder(
     private val listProductName: List<String>,
 ) : NewOrder1() {
 
-    override fun getOrderProduct() = "Заказан товар \"$listProductName\""
+    override fun getOrderProduct() = "Заказан товар: $listProductName"
 }
