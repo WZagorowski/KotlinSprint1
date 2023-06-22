@@ -1,26 +1,32 @@
 package lesson_16
 
-fun main(){
+fun main() {
 
-    val order101 = NewOrder()
+    val order101 = NewOrder(20062023000001)
 
     order101.showOrderStatus()
-    order101.askForChangeOrderStatus("Заказ 20062023000001 собран и ожидает отправления в отделе доставки.")
+    order101.askForChangeOrderStatus()
     order101.showOrderStatus()
 }
 
-private class NewOrder {
+private class NewOrder(private val orderNumber: Long, private var orderStatus: String = "Принят") {
 
-    private val orderNumber = 20062023000001
-    private var orderStatus = "Спасибо за покупку! Вашему заказу присвоен номер: $orderNumber"
+    val listOfStatus = listOf("Принят", "В ожидании", "Закрыт")
 
-    fun showOrderStatus() = println(orderStatus)
+    fun showOrderStatus() = println("Текущий статус заказа: \"$orderStatus\"")
 
     private fun changeOrderStatus(newStatus: String) {
         orderStatus = newStatus
     }
 
-    fun askForChangeOrderStatus(newStatus: String) {
-       changeOrderStatus(newStatus)
+    fun askForChangeOrderStatus() {
+        println("Выберите номер нового статуса заказа:\n1. ${listOfStatus[1]}\n2. ${listOfStatus[2]}")
+        var newStatus = readln()
+        when (newStatus) {
+            "1" -> newStatus = listOfStatus[1]
+            "2" -> newStatus = listOfStatus[2]
+            else -> println("Ошибка!")
+        }
+        changeOrderStatus(newStatus)
     }
 }
