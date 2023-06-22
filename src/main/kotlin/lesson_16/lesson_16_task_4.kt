@@ -13,7 +13,7 @@ private class NewOrder(private val orderNumber: Long, private var orderStatus: S
 
     val listOfStatus = listOf("Принят", "В ожидании", "Закрыт")
 
-    fun showOrderStatus() = println("Текущий статус заказа: \"$orderStatus\"")
+    fun showOrderStatus() = println("Текущий статус заказа №$orderNumber: \"$orderStatus\"")
 
     private fun changeOrderStatus(newStatus: String) {
         orderStatus = newStatus
