@@ -12,11 +12,11 @@ fun main() {
         listOf("Клавиатура", "Коврик", "Мышь", "Подставка"),
     )
 
-    val arrayOfNotes = arrayOf(order1, order2)
-    showAllOrders(arrayOfNotes)
+    val listOfOrders = listOf(order1, order2)
+    showAllOrders(listOfOrders)
 }
 
-fun showAllOrders(orders: Array<NewOrder1>) {
+fun showAllOrders(orders: List<NewOrder1>) {
     orders.forEach {
         println(it.getOrderProduct())
     }
