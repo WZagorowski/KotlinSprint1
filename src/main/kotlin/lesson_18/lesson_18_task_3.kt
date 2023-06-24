@@ -2,9 +2,9 @@ package lesson_18
 
 fun main() {
 
-    val animal01 = Fox("Lisa", "berries")
-    val animal02 = Dog("Snoopy", "bones")
-    val animal03 = Cat("Tom", "fish")
+    val animal01 = Fox("Lisa")
+    val animal02 = Dog("Snoopy")
+    val animal03 = Cat("Tom")
 
     val listAllAnimal = listOf(animal01, animal02, animal03)
     printAllActivities(listAllAnimal)
@@ -18,17 +18,31 @@ fun printAllActivities(listAnimal: List<Animal>) {
     }
 }
 
-abstract class Animal(private val animalName: String, private val animalFood: String) {
+abstract class Animal {
 
-    fun play() = println("$animalName is playing now!")
-
-    fun sleep() = println("$animalName is sleeping now!")
-
-    fun eat() = println("$animalName is eating $animalFood now!")
+    abstract val animalName: String
+    abstract fun play()
+    abstract fun sleep()
+    abstract fun eat()
 }
 
-private class Fox(animalName: String, animalFood: String) : Animal(animalName, animalFood)
+private class Fox(override val animalName: String) : Animal() {
 
-private class Dog(animalName: String, animalFood: String) : Animal(animalName, animalFood)
+    override fun play() = println("Fox $animalName is playing now!")
+    override fun sleep() = println("Fox $animalName is sleeping now!")
+    override fun eat() = println("Fox $animalName is eating berries now!")
+}
 
-private class Cat(animalName: String, animalFood: String) : Animal(animalName, animalFood)
+private class Dog(override val animalName: String) : Animal() {
+
+    override fun play() = println("Dog $animalName is playing now!")
+    override fun sleep() = println("Dog $animalName is sleeping now!")
+    override fun eat() = println("Dog $animalName is eating bones now!")
+}
+
+private class Cat(override val animalName: String) : Animal() {
+
+    override fun play() = println("Cat $animalName is playing now!")
+    override fun sleep() = println("Cat $animalName is sleeping now!")
+    override fun eat() = println("Cat $animalName is eating fish now!")
+}
