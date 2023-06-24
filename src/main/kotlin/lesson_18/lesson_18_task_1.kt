@@ -18,13 +18,13 @@ fun main() {
 
 fun showAllOrders(orders: List<NewOrder1>) {
     orders.forEach {
-        println(it.getOrderProduct())
+        println(it.getOrderedProduct())
     }
 }
 
 open class NewOrder1 {
 
-    open fun getOrderProduct() = ""
+    open fun getOrderedProduct() = ""
 }
 
 class OnlyItemOrder(
@@ -32,7 +32,7 @@ class OnlyItemOrder(
     private val productName: String,
 ) : NewOrder1() {
 
-    override fun getOrderProduct() = "Заказан товар: $productName"
+    override fun getOrderedProduct() = "Заказан товар: $productName"
 }
 
 class ListItemOrder(
@@ -40,5 +40,10 @@ class ListItemOrder(
     private val listProductName: List<String>,
 ) : NewOrder1() {
 
-    override fun getOrderProduct() = "Заказан товар: $listProductName"
+    override fun getOrderedProduct(): String {
+        var result = ""
+        listProductName.forEach { result += " $it," }
+
+        return "Заказаны следующие товары:${result.dropLast(1)}"
+    }
 }
