@@ -11,13 +11,13 @@ fun main() {
     dice8.getShootingDice()
 }
 
-abstract class AbstractDice(private val numberSide: Int) {
+abstract class BaseDice(private val numberSide: Int) {
 
     fun getShootingDice() = println((1..numberSide).random())
 }
 
-private class FourSidedDice(numberSide: Int = 4) : AbstractDice(numberSide)
+private class FourSidedDice(numberSide: Int = 4) : BaseDice(numberSide)
 
-private class SixSidedDice(numberSide: Int = 6) : AbstractDice(numberSide)
+private class SixSidedDice(numberSide: Int = 6) : BaseDice(numberSide)
 
-private class EightSidedDice(numberSide: Int = 8) : AbstractDice(numberSide)
+private class EightSidedDice(numberSide: Int = 8) : BaseDice(numberSide)
