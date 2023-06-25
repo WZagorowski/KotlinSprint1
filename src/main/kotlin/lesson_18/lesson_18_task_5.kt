@@ -1,70 +1,77 @@
 package lesson_18
 
 fun main() {
+    val drawingScreen = Screen()
 
-    val screen01 = Point()
-    val screen02 = Square(side = 10.5f)
-    val screen03 = Circle(radius = 5f)
+    val point1 = Point()
+    val square1 = Square(side = 10.5f)
+    val circle1 = Circle(radius = 5f)
+    val point2 = Point()
+    val square2 = Square(side = 8f)
+    val circle2 = Circle(radius = 7.5f)
 
-    screen01.draw(5, 3.5f, POINT)
-    screen02.draw(0.8f, 5, SQUARE)
-    screen03.draw(9.5f, 5.9f, CIRCLE)
+    drawingScreen.draw(x = 5, y = 3.5f, point1)
+    drawingScreen.draw(x = 0.8f, y = 5, square1)
+    drawingScreen.draw(x = 9.5f, y = 5.9f, circle1)
+    println()
+    drawingScreen.draw(x = 3.5f, y = 7, point2)
+    drawingScreen.draw(x = 10, y = 5, square2)
+    drawingScreen.draw(x = 9, y = 7, circle2)
 }
 
-open class Screen {
+private class Screen {
 
-    open fun draw(x: Int, y: Int, figure: String) {}
-    open fun draw(x: Float, y: Int, figure: String) {}
-    open fun draw(x: Float, y: Float, figure: String) {}
-    open fun draw(x: Int, y: Float, figure: String) {}
+    fun draw(x: Int, y: Int, figure: BaseFigure) = println(figure.getDrawingMethod(x, y))
+    fun draw(x: Float, y: Int, figure: BaseFigure) = println(figure.getDrawingMethod(x, y))
+    fun draw(x: Float, y: Float, figure: BaseFigure) = println(figure.getDrawingMethod(x, y))
+    fun draw(x: Int, y: Float, figure: BaseFigure) = println(figure.getDrawingMethod(x, y))
 }
 
-private class Point : Screen() {
+abstract class BaseFigure {
 
-    override fun draw(x: Int, y: Int, figure: String) = println("Draw a $figure in coordinates (x:y) = $x:$y")
-    override fun draw(x: Float, y: Int, figure: String) = println("Draw a $figure in coordinates (x:y) = $x:$y")
-    override fun draw(x: Float, y: Float, figure: String) = println("Draw a $figure in coordinates (x:y) = $x:$y")
-    override fun draw(x: Int, y: Float, figure: String) = println("Draw a $figure in coordinates (x:y) = $x:$y")
+    abstract fun getDrawingMethod(x: Int, y: Int): String
+    abstract fun getDrawingMethod(x: Float, y: Int): String
+    abstract fun getDrawingMethod(x: Float, y: Float): String
+    abstract fun getDrawingMethod(x: Int, y: Float): String
 }
 
-private class Square(private val side: Float) : Screen() {
+private class Point : BaseFigure() {
 
-    override fun draw(x: Int, y: Int, figure: String) = println(
-        "Draw a $figure with four coordinates (x:y) = $x:$y, $x:${y + side}, ${x + side}:${y + side}, ${x + side}:$y"
-    )
+    override fun getDrawingMethod(x: Int, y: Int) = "Draw a point in coordinates (x:y) = $x:$y"
 
-    override fun draw(x: Float, y: Int, figure: String) = println(
-        "Draw a $figure with four coordinates (x:y) = $x:$y, $x:${y + side}, ${x + side}:${y + side}, ${x + side}:$y"
-    )
+    override fun getDrawingMethod(x: Float, y: Int) = "Draw a point in coordinates (x:y) = $x:$y"
 
-    override fun draw(x: Float, y: Float, figure: String) = println(
-        "Draw a $figure with four coordinates (x:y) = $x:$y, $x:${y + side}, ${x + side}:${y + side}, ${x + side}:$y"
-    )
+    override fun getDrawingMethod(x: Float, y: Float) = "Draw a point in coordinates (x:y) = $x:$y"
 
-    override fun draw(x: Int, y: Float, figure: String) = println(
-        "Draw a $figure with four coordinates (x:y) = $x:$y, $x:${y + side}, ${x + side}:${y + side}, ${x + side}:$y"
-    )
+    override fun getDrawingMethod(x: Int, y: Float) = "Draw a point in coordinates (x:y) = $x:$y"
 }
 
-private class Circle(private val radius: Float) : Screen() {
+private class Square(private val side: Float) : BaseFigure() {
 
-    override fun draw(x: Int, y: Int, figure: String) = println(
-        "Draw a $figure with a radius = $radius and coordinates of the center (x:y) = $x:$y"
-    )
+    override fun getDrawingMethod(x: Int, y: Int) =
+        "Draw a square with four coordinates (x:y) = $x:$y, $x:${y + side}, ${x + side}:${y + side}, ${x + side}:$y"
 
-    override fun draw(x: Float, y: Int, figure: String) = println(
-        "Draw a $figure with a radius = $radius and coordinates of the center (x:y) = $x:$y"
-    )
+    override fun getDrawingMethod(x: Float, y: Int) =
+        "Draw a square with four coordinates (x:y) = $x:$y, $x:${y + side}, ${x + side}:${y + side}, ${x + side}:$y"
 
-    override fun draw(x: Float, y: Float, figure: String) = println(
-        "Draw a $figure with a radius = $radius and coordinates of the center (x:y) = $x:$y"
-    )
+    override fun getDrawingMethod(x: Float, y: Float) =
+        "Draw a square with four coordinates (x:y) = $x:$y, $x:${y + side}, ${x + side}:${y + side}, ${x + side}:$y"
 
-    override fun draw(x: Int, y: Float, figure: String) = println(
-        "Draw a $figure with a radius = $radius and coordinates of the center (x:y) = $x:$y"
-    )
+    override fun getDrawingMethod(x: Int, y: Float) =
+        "Draw a square with four coordinates (x:y) = $x:$y, $x:${y + side}, ${x + side}:${y + side}, ${x + side}:$y"
 }
 
-const val POINT = "point"
-const val SQUARE = "square"
-const val CIRCLE = "circle"
+private class Circle(private val radius: Float) : BaseFigure() {
+
+    override fun getDrawingMethod(x: Int, y: Int) =
+        "Draw a circle with a radius = $radius and coordinates of the center (x:y) = $x:$y"
+
+    override fun getDrawingMethod(x: Float, y: Int) =
+        "Draw a circle with a radius = $radius and coordinates of the center (x:y) = $x:$y"
+
+    override fun getDrawingMethod(x: Float, y: Float) =
+        "Draw a circle with a radius = $radius and coordinates of the center (x:y) = $x:$y"
+
+    override fun getDrawingMethod(x: Int, y: Float) =
+        "Draw a circle with a radius = $radius and coordinates of the center (x:y) = $x:$y"
+}
