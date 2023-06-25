@@ -3,26 +3,13 @@ package lesson_19
 fun main() {
 
     println("Список рыбок, доступных для добавления в аквариум:")
-    for (i in Fish.values()) println(i.getFishName())
+    Fish.values().forEach { println(it.fishName) }
 }
 
-enum class Fish {
+enum class Fish(val fishName : String) {
 
-    GUPPY {
-        override fun getFishName() = "Гуппи"
-    },
-
-    ANGELFISH {
-        override fun getFishName() = "Скалярия"
-    },
-
-    GOLDFISH {
-        override fun getFishName() = "Золотая рыбка"
-    },
-
-    SIAMESE_FIGHTING_FISH {
-        override fun getFishName() = "Петушок"
-    };
-
-    abstract fun getFishName(): String
+    GUPPY("Гуппи"),
+    ANGELFISH("Скалярия"),
+    GOLDFISH("Золотая рыбка"),
+    SIAMESE_FIGHTING_FISH("Петушок");
 }
