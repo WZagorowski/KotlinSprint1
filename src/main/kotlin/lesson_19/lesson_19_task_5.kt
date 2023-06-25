@@ -2,8 +2,8 @@ package lesson_19
 
 fun main() {
 
-    val register = NameRegister()
-    register.addFiveEntry()
+    val register = PersonsRegister()
+    register.addFivePersons()
 }
 
 enum class Gender(val translation: String) {
@@ -11,8 +11,10 @@ enum class Gender(val translation: String) {
     FEMALE("женский"),
 }
 
-private class NameRegister {
+private class PersonsRegister {
 
+    val listOfAllPersons: MutableList<Person> = mutableListOf()
+    
     init {
         println(
             """
@@ -25,9 +27,8 @@ private class NameRegister {
         )
     }
 
-    val listOfAllNames: MutableList<Init> = mutableListOf()
 
-    fun addFiveEntry() {
+    fun addFivePersons() {
         for (i in 1..5) {
             println("Заполните $i запись из 5 в картотеку.\nВведите имя:")
             val newName = readln()
@@ -40,10 +41,10 @@ private class NameRegister {
 
             val newGender = if (input == "м") Gender.MALE else Gender.FEMALE
 
-            listOfAllNames.add(Init(newName, newGender))
+            listOfAllPersons.add(Person(newName, newGender))
         }
-        listOfAllNames.forEach { println("Имя: ${it.name}, пол: ${it.gender.translation}.") }
+        listOfAllPersons.forEach { println("Имя: ${it.name}, пол: ${it.gender.translation}.") }
     }
 }
 
-private class Init(val name: String, val gender: Gender)
+private class Person(val name: String, val gender: Gender)
