@@ -32,19 +32,25 @@ private class PersonsRegister {
         for (i in 1..5) {
             println("Заполните $i запись из 5 в картотеку.\nВведите имя:")
             val newName = readln()
-            var input = ""
 
-            do {
-                println("Введите пол (м - мужской, ж - женский):")
-                input = readln()
-            } while (input != "м" && input != "ж")
-
-            val newGender = if (input == "м") Gender.MALE else Gender.FEMALE
-
-            listOfAllPersons.add(Person(newName, newGender))
+            listOfAllPersons.add(Person(newName, getGenderField()))
         }
         listOfAllPersons.forEach { println("Имя: ${it.name}, пол: ${it.gender.translation}.") }
     }
 }
 
 private class Person(val name: String, val gender: Gender)
+
+fun getGenderField(): Gender {
+    var input: String
+
+    do {
+        println("Введите пол (м - мужской, ж - женский):")
+        input = readln()
+    } while (input != "м" && input != "ж")
+
+    return if (input == "м")
+        Gender.MALE
+    else
+        Gender.FEMALE
+}
