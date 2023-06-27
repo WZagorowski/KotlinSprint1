@@ -27,7 +27,6 @@ private class PersonsRegister {
         )
     }
 
-
     fun addFivePersons() {
         for (i in 1..5) {
             println("Заполните $i запись из 5 в картотеку.\nВведите имя:")
