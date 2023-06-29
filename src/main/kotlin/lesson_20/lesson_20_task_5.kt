@@ -3,9 +3,9 @@ package lesson_20
 fun main() {
     val bender = Robot("Бендер Жестянкин")
 
-    bender.say()
-    bender.say()
-    bender.say()
+    bender.say.invoke()
+    bender.say.invoke()
+    bender.say.invoke()
 }
 
 private class Robot(val name: String) {
@@ -13,7 +13,7 @@ private class Robot(val name: String) {
     val listPhrase = mutableListOf(
         "добрый день",
         "спасибо большое",
-        "да нет наверное",
+        "это правильный ответ",
         "повторите ваш вопрос",
         "скорее да чем нет"
     )
@@ -22,11 +22,10 @@ private class Robot(val name: String) {
 
     private val setModifier = {
         var randomPhrase = listPhrase.random()
-        val shufflePhrase: List<String> = randomPhrase.split(" ").toList().shuffled()
+        val reversedPhrase: List<String> = randomPhrase.split(" ").toList().reversed()
         randomPhrase = ""
 
-        for (i in shufflePhrase)
-            randomPhrase += " $i"
+        reversedPhrase.forEach { randomPhrase += " $it" }
         randomPhrase.drop(1)
     }
 }
