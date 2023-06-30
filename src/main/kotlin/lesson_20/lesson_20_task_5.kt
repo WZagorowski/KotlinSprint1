@@ -21,11 +21,6 @@ private class Robot(val name: String) {
     val say = { println("$name говорит: ${setModifier()}") }
 
     private val setModifier = {
-        var randomPhrase = listPhrase.random()
-        val reversedPhrase: List<String> = randomPhrase.split(" ").toList().reversed()
-        randomPhrase = ""
-
-        reversedPhrase.forEach { randomPhrase += " $it" }
-        randomPhrase.drop(1)
+        listPhrase.random().split(" ").toList().reversed().joinToString(" ")
     }
 }
